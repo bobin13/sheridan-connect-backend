@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3GjnjuL8/U2HVoUWvY/jqbcHVTCsyFx1oXDjRPrrRt03VRQWGRhNgAWtwemm1v55AMxL7fLwvL5aG1Gr47kCww==",
+  "dgSpecHash": "wYztaSHHADPASRU93eyLxoorWg4e7GymvG6DbiTLWe4kStLHkPHY/nU8EqtL2Uwf/NPw8vzGvkO6CI3K3H4IRg==",
   "success": true,
   "projectFilePath": "C:\\Users\\bahwi\\OneDrive\\Documents\\VS Code Projects\\Sheridan Connect Project\\sheridan-connect-backend\\sheridan-connect-backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bahwi\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\bahwi\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\bahwi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.2\\microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",
     "C:\\Users\\bahwi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

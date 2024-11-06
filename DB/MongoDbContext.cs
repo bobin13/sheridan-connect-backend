@@ -57,6 +57,13 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Community>("communities");
         }
 
+        public IMongoCollection<Post> GetAllPost()
+        {
+            var client = GetMongoClient();
+
+            return client.GetDatabase(this.dbName).GetCollection<Post>("posts");
+        }
+
 
     }
 }

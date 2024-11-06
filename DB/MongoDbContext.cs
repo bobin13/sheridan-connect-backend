@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
+using sheridan_connect_backend.Models;
 
 namespace sheridan_connect_backend.DB
 {
@@ -21,26 +22,39 @@ namespace sheridan_connect_backend.DB
             return uri;
         }
 
-        public MongoClient GetMongoClient(string connectionString)
+        public MongoClient GetMongoClient()
         {
-            var client = new MongoClient(connectionString);
+            var client = new MongoClient(GetConnectionString());
 
             return client;
 
         }
 
-        public IMongoCollection<dynamic> GetCollection(string collectionName)
+        public IMongoCollection<User> GetUserCollection()
         {
-            string connectionString = GetConnectionString();
-            var db = GetMongoClient(connectionString);
-            return db.GetDatabase(this.dbName).GetCollection<dynamic>(collectionName);
+
+            var client = GetMongoClient();
+            return client.GetDatabase(this.dbName).GetCollection<User>("users");
 
         }
 
-        public void GetAllCommunities()
+        public dynamic GetAllUserCommunities(ObjectId id)
         {
-            //var collection = GetCollection<Store>("stores");
 
+            var client = GetMongoClient();
+            var filter = Builders<Community>.Filter.Eq("_id", id);
+
+            return client.GetDatabase(this.dbName).GetCollection<Community>("communities").Find(filter);
+
+
+
+        }
+
+        public IMongoCollection<Community> GetAllCommunities()
+        {
+            var client = GetMongoClient();
+
+            return client.GetDatabase(this.dbName).GetCollection<Community>("communities");
         }
 
 

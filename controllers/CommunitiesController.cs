@@ -10,8 +10,8 @@ using sheridan_connect_backend.DB;
 namespace sheridan_connect_backend.controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class CommunityController : ControllerBase
+    [Route("api/v1/[controller]")]
+    public class CommunitiesController : ControllerBase
     {
 
         MongoDbContext db = new MongoDbContext();

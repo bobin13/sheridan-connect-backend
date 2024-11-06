@@ -1,11 +1,3 @@
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.csproj.AssemblyReference.cache
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.AssemblyInfoInputs.cache
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.AssemblyInfo.cs
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.csproj.CoreCompileInputs.cache
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.sourcelink.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\appsettings.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\sheridan-connect-backend.exe
@@ -25,6 +17,14 @@ C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sher
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.csproj.AssemblyReference.cache
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.AssemblyInfoInputs.cache
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.AssemblyInfo.cs
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.csproj.CoreCompileInputs.cache
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\sheridan-connect-backend.sourcelink.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\bahwi\OneDrive\Documents\VS Code Projects\Sheridan Connect Project\sheridan-connect-backend\obj\Debug\net8.0\staticwebassets\msbuild.sheridan-connect-backend.Microsoft.AspNetCore.StaticWebAssets.props

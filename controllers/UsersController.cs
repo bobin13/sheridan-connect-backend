@@ -6,7 +6,7 @@ using sheridan_connect_backend.Models;
 namespace sheridan_connect_backend.controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class UsersController : ControllerBase
     {
 
@@ -28,7 +28,8 @@ namespace sheridan_connect_backend.controllers
             catch (Exception e)
             {
 
-                return BadRequest([]);
+                return BadRequest(e.Message
+                );
             }
 
 

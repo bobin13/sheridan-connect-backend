@@ -17,7 +17,7 @@ namespace sheridan_connect_backend.DB
             var username = Environment.GetEnvironmentVariable("USERNAME");
             var password = Environment.GetEnvironmentVariable("PASSWORD");
 
-            var uri = $"mongodb+srv://{username}:{password}@cluster0.wi0uk9y.mongodb.net/?retryWrites=true&w=majority";
+            var uri = $"mongodb+srv://{username}:{password}@cluster-sheridan-connec.qjhvt.mongodb.net/";
 
             return uri;
         }

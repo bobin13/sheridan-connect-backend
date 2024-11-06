@@ -9,7 +9,7 @@ using sheridan_connect_backend.DB;
 namespace sheridan_connect_backend.controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class NewsfeedController : ControllerBase
     {
         MongoDbContext db = new MongoDbContext();

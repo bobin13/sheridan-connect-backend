@@ -7,12 +7,19 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace sheridan_connect_backend.Models
 {
+    public class Member
+    {
+        [BsonElement("name")]
+        public string name { get; set; }
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string id { get; set; }
+    }
     public class Community
     {
         [BsonId]
-        public ObjectId _id { get; set; }
-
-        public string idString { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
 
         [BsonElement("name")]
         public string Name { get; set; }
@@ -26,11 +33,13 @@ namespace sheridan_connect_backend.Models
         [BsonElement("category")]
         public string Category { get; set; }
 
-        [BsonElement("admin")]
-        public List<string> Admin { get; set; }
+
+        [BsonElement("admins")]
+        public string Admins { get; set; }
 
         [BsonElement("members")]
-        public List<ObjectId> Members { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public List<string> Members { get; set; }
 
     }
 

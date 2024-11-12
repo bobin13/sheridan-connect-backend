@@ -11,7 +11,7 @@ namespace sheridan_connect_backend.DB
         public string GetConnectionString()
         {
             var root = Directory.GetCurrentDirectory();
-            var dotenv = Path.Combine(root, "variables.env");
+            var dotenv = Path.Combine(root, ".env");
             DotEnv.Load(dotenv);
 
             var username = Environment.GetEnvironmentVariable("USERNAME");
@@ -38,6 +38,7 @@ namespace sheridan_connect_backend.DB
 
         }
 
+        //-----------------Community related operations---------------------------------------------------------------------
         public dynamic GetAllUserCommunities(ObjectId id)
         {
 
@@ -57,6 +58,31 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Community>("communities");
         }
 
+        public async Task<bool> AddCommunity(Community community, ObjectId id)
+        {
+            try
+            {
+                var client = GetMongoClient();
+                var db = client.GetDatabase(this.dbName);
+                User user = await db.GetCollection<User>("users").Find(_ => _._id == id).FirstAsync();
+
+                if (user == null)
+                {
+                    return false;
+                }
+                //community.Admins.Add(user._id);
+                await db.GetCollection<Community>("communities").InsertOneAsync(community);
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        //------------------------Newsfeed related operations---------------------------------------------------------------------
         public IMongoCollection<Post> GetAllPost()
         {
             var client = GetMongoClient();

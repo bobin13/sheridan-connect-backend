@@ -12,6 +12,8 @@ namespace sheridan_connect_backend.Models
         [BsonId]
         public ObjectId _id { get; set; }
 
+        public string idString { get; set; }
+
         [BsonElement("name")]
         public string Name { get; set; }
 
@@ -24,11 +26,13 @@ namespace sheridan_connect_backend.Models
         [BsonElement("category")]
         public string Category { get; set; }
 
-        [BsonElement("admins")]
-        public List<ObjectId> Admins { get; set; }
+        [BsonElement("admin")]
+        public List<string> Admin { get; set; }
 
         [BsonElement("members")]
         public List<ObjectId> Members { get; set; }
 
     }
+
+
 }

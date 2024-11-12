@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using sheridan_connect_backend.DB;
+using sheridan_connect_backend.Models;
 
 namespace sheridan_connect_backend.controllers
 {
@@ -36,12 +37,40 @@ namespace sheridan_connect_backend.controllers
             try
             {
                 var communities = db.GetAllCommunities().AsQueryable();
+
+                // foreach (var community in communities)
+                // {
+                //     community.idString = community._id.ToString();
+                //     Console.WriteLine(community._id.ToString());
+                // }
                 return Ok(communities);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpPost("{id}")]
+        public async Task<IActionResult> AddCommunityUser([FromBody] Community community, ObjectId id)
+        {
+            try
+            {
+                if (community == null)
+                    return BadRequest("Invalid Input");
+
+                if (await db.AddCommunity(community, id))
+                    return Ok("Community Added!");
+
+                return BadRequest("Error Occured while trying to add community!");
+
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
         }
 
     }

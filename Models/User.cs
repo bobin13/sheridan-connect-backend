@@ -11,7 +11,8 @@ namespace sheridan_connect_backend.Models
     {
 
         [BsonId]
-        public ObjectId _id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
 
         [BsonElement("name")]
         public string Name { get; set; }
@@ -44,6 +45,8 @@ namespace sheridan_connect_backend.Models
 
     public class JoinedCommunity
     {
+
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("community_id")]
         public string CommunityId { get; set; }
 

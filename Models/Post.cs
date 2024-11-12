@@ -10,7 +10,8 @@ namespace sheridan_connect_backend.Models
     public class Post
     {
         [BsonId]
-        public ObjectId _id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
 
         [BsonElement("post_user_id")]
         public string PostUserId { get; set; }

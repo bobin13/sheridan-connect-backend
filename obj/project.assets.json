@@ -1093,19 +1093,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bahwi\\.nuget\\packages\\": {}
+    "/Users/akshaysoni/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bahwi\\OneDrive\\Documents\\VS Code Projects\\Sheridan Connect Project\\sheridan-connect-backend\\sheridan-connect-backend.csproj",
+      "projectUniqueName": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
       "projectName": "sheridan-connect-backend",
-      "projectPath": "C:\\Users\\bahwi\\OneDrive\\Documents\\VS Code Projects\\Sheridan Connect Project\\sheridan-connect-backend\\sheridan-connect-backend.csproj",
-      "packagesPath": "C:\\Users\\bahwi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bahwi\\OneDrive\\Documents\\VS Code Projects\\Sheridan Connect Project\\sheridan-connect-backend\\obj\\",
+      "projectPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
+      "packagesPath": "/Users/akshaysoni/.nuget/packages/",
+      "outputPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bahwi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/akshaysoni/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1170,7 +1170,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

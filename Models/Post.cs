@@ -29,11 +29,11 @@ namespace sheridan_connect_backend.Models
         [BsonElement("like_count")]
         public int LikeCount { get; set; }
 
-        [BsonElement("comments")]
-        public List<string> Comments { get; set; }
+    [BsonElement("comments")]
+    public List<string> Comments { get; set; } = new List<string>();  // Default to empty list
 
-        [BsonElement("likes")]
-        public List<string> Likes { get; set; }
+    [BsonElement("likes")]
+    public List<string> Likes { get; set; } = new List<string>(); 
 
         [BsonElement("time_posted")]
         public DateTime TimePosted { get; set; }

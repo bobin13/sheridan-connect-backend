@@ -90,7 +90,7 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Post>("posts");
         }
 
-                public async Task<bool> AddPost(Post newPost)
+         public async Task<bool> AddPost(Post newPost)
         {
             try
             {

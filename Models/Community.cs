@@ -10,7 +10,7 @@ namespace sheridan_connect_backend.Models
     public class Member
     {
         [BsonElement("name")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; }

@@ -36,10 +36,10 @@ namespace sheridan_connect_backend.Models
         public List<JoinedCommunity> JoinedCommunities { get; set; }
 
         [BsonElement("created_at")]
-        public string CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         [BsonElement("updated_at")]
-        public string UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
     }
 
@@ -51,7 +51,7 @@ namespace sheridan_connect_backend.Models
         public string CommunityId { get; set; }
 
         [BsonElement("joined_at")]
-        public string JoinedAt { get; set; }
+        public DateTime JoinedAt { get; set; }
 
     }
 }

@@ -13,6 +13,7 @@ namespace sheridan_connect_backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string _id { get; set; }
 
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("post_user_id")]
         public string PostUserId { get; set; }
 
@@ -35,6 +36,6 @@ namespace sheridan_connect_backend.Models
         public List<string> Likes { get; set; }
 
         [BsonElement("time_posted")]
-        public string TimePosted { get; set; }
+        public DateTime TimePosted { get; set; }
     }
 }

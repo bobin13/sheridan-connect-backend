@@ -58,7 +58,7 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Community>("communities");
         }
 
-        public async Task<bool> AddCommunity(Community community, ObjectId id)
+        public async Task<bool> AddCommunity(Community community, string id)
         {
             try
             {

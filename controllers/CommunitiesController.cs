@@ -52,7 +52,7 @@ namespace sheridan_connect_backend.controllers
         }
 
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddCommunityUser([FromBody] Community community, ObjectId id)
+        public async Task<IActionResult> AddCommunityUser([FromBody] Community community, string id)
         {
             try
             {

@@ -90,6 +90,21 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Post>("posts");
         }
 
+                public async Task<bool> AddPost(Post newPost)
+        {
+            try
+            {
+                var client = GetMongoClient();
+                var db = client.GetDatabase(this.dbName);
+                await db.GetCollection<Post>("posts").InsertOneAsync(newPost);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
 
     }
 }

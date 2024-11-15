@@ -41,6 +41,13 @@ namespace sheridan_connect_backend.Models
         [BsonElement("updated_at")]
         public DateTime UpdatedAt { get; set; }
 
+        [BsonElement("Age")]
+        public int Age { get; set; }
+
+        [BsonElement("Password")]
+        public string Password { get; set; }
+
+
     }
 
     public class JoinedCommunity

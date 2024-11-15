@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj": {}
+    "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj": {}
   },
   "projects": {
-    "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj": {
+    "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
+        "projectUniqueName": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
         "projectName": "sheridan-connect-backend",
-        "projectPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
-        "packagesPath": "/Users/akshaysoni/.nuget/packages/",
-        "outputPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/obj/",
+        "projectPath": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
+        "packagesPath": "/Users/arshdeepsingh/.nuget/packages/",
+        "outputPath": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/akshaysoni/.nuget/NuGet/NuGet.Config"
+          "/Users/arshdeepsingh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -47,9 +42,21 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -58,6 +65,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.2.0, )"
             }
           },
           "imports": [
@@ -79,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

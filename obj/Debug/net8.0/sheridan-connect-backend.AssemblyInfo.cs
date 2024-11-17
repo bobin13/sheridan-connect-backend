@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sheridan-connect-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f9631d3eafdb49f5c58bbc03aa10b3d0e801cd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f5a85940be4b0defe1e86523f6a947638f3678f")]
 [assembly: System.Reflection.AssemblyProductAttribute("sheridan-connect-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sheridan-connect-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2017,19 +2017,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/arshdeepsingh/.nuget/packages/": {}
+    "/Users/akshaysoni/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
+      "projectUniqueName": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
       "projectName": "sheridan-connect-backend",
-      "projectPath": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
-      "packagesPath": "/Users/arshdeepsingh/.nuget/packages/",
-      "outputPath": "/Users/arshdeepsingh/Desktop/sheridan-connect-backend/obj/",
+      "projectPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/sheridan-connect-backend.csproj",
+      "packagesPath": "/Users/akshaysoni/.nuget/packages/",
+      "outputPath": "/Users/akshaysoni/Desktop/sheridan-connect-backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/arshdeepsingh/.nuget/NuGet/NuGet.Config"
+        "/Users/akshaysoni/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2047,6 +2047,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2105,7 +2110,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

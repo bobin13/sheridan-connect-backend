@@ -18,6 +18,12 @@ namespace sheridan_connect_backend.Controllers
         private readonly UserService _userService;
         private readonly AppSettings _appSettings;
 
+        public class LoginDto
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+        }
+
         public AuthController(UserService userService, IOptions<AppSettings> appSettings)
         {
             _userService = userService;
@@ -30,7 +36,7 @@ namespace sheridan_connect_backend.Controllers
             var existingUser = await _userService.GetUserByEmailAsync(user.Email);
             if (existingUser != null)
             {
-                return BadRequest(new { message = "User already exists."});
+                return BadRequest(new { message = "User already exists." });
             }
 
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
@@ -40,12 +46,15 @@ namespace sheridan_connect_backend.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] User user)
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            var existingUser = await _userService.GetUserByEmailAsync(user.Email);
-            if (existingUser == null || !BCrypt.Net.BCrypt.Verify(user.Password, existingUser.Password))
+            Console.WriteLine(loginDto.Email + " / " + loginDto.Password);
+
+
+            var existingUser = await _userService.GetUserByEmailAsync(loginDto.Email);
+            if (existingUser == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, existingUser.Password))
             {
-               return Unauthorized(new { message = "Invalid credentials." });
+                return Unauthorized(new { message = "Invalid credentials." });
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -55,7 +64,7 @@ namespace sheridan_connect_backend.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, existingUser._id),
+                    new Claim(ClaimTypes.Name, existingUser._id.ToString()),
                     new Claim(ClaimTypes.Email, existingUser.Email)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
@@ -63,8 +72,13 @@ namespace sheridan_connect_backend.Controllers
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
 
-            return Ok(new { token = tokenHandler.WriteToken(token) });
+            return Ok(new
+            {
+                token = tokenString,
+                email = existingUser.Email
+            });
         }
     }
-}   
+}

@@ -15,15 +15,15 @@ namespace sheridan_connect_backend.Handlers
 //         public string Database { get; set; }
 //     }
 
-//     public class JwtSettings
-//     {
-//         public string SecretKey { get; set; }
-//     }
+    // public class JwtSettings
+    // {
+    //     public string SecretKey { get; set; }
+    // }
 
 
         public class AppSettings
         {
-            public string JwtSecret { get; set; }
+            public required string JwtSecret { get; set; }
  
             public string ConnectionString { get; set; }
             public string DatabaseName { get; set; }

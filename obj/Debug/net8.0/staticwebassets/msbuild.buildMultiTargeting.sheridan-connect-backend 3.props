@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/sheridan-connect-backend.props" />
-</Project>

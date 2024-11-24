@@ -5,15 +5,12 @@ using sheridan_connect_backend.Models;
 namespace sheridan_connect_backend.DB
 {
 
-    
+
     public class MongoDbContext
     {
         string dbName = "sheridan-connect";
         public string GetConnectionString()
         {
-            var root = Directory.GetCurrentDirectory();
-            var dotenv = Path.Combine(root, ".env");
-            DotEnv.Load(dotenv);
 
             var username = Environment.GetEnvironmentVariable("USERNAME");
             var password = Environment.GetEnvironmentVariable("PASSWORD");
@@ -31,11 +28,11 @@ namespace sheridan_connect_backend.DB
 
         }
 
-        public IMongoCollection<User> GetUserCollection()
+        public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
 
             var client = GetMongoClient();
-            return client.GetDatabase(this.dbName).GetCollection<User>("users");
+            return client.GetDatabase(this.dbName).GetCollection<T>(collectionName);
 
         }
 
@@ -91,7 +88,7 @@ namespace sheridan_connect_backend.DB
             return client.GetDatabase(this.dbName).GetCollection<Post>("posts");
         }
 
-         public async Task<bool> AddPost(Post newPost)
+        public async Task<bool> AddPost(Post newPost)
         {
             try
             {

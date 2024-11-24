@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using sheridan_connect_backend;
 using sheridan_connect_backend.DB;
 using sheridan_connect_backend.Handlers;
 
@@ -51,6 +52,11 @@ if (app.Environment.IsDevelopment())
 {
 
 }
+//adding mongo creds to Environment Variables
+var root = Directory.GetCurrentDirectory();
+var dotenv = Path.Combine(root, ".env");
+DotEnv.Load(dotenv);
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

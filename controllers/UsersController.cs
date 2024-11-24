@@ -17,7 +17,7 @@ namespace sheridan_connect_backend.controllers
         {
             try
             {
-                var users = db.GetUserCollection().AsQueryable();
+                var users = db.GetCollection<User>("users").AsQueryable();
                 return Ok(users);
             }
             catch (MongoException e)
@@ -43,7 +43,7 @@ namespace sheridan_connect_backend.controllers
             {
                 var filter = Builders<User>.Filter.Eq("username", username);
 
-                var users = db.GetUserCollection().Find(filter).First();
+                var users = db.GetCollection<User>("users").Find(filter).FirstOrDefault();
 
                 return Ok(users);
             }

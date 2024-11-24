@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
@@ -17,12 +18,30 @@ namespace sheridan_connect_backend.controllers
 
         MongoDbContext db = new MongoDbContext();
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public IActionResult GetAllUserCommunities(ObjectId id)
         {
             try
             {
-                var communities = db.GetAllUserCommunities(id);
+                //getting the user from recieved id
+                var filter = Builders<User>.Filter.Eq("_id", id);
+                var user = db.GetCollection<User>("users").Find(filter).FirstOrDefault();
+                if (user == null)
+                    return BadRequest("User not found!");
+
+                //adding user joined communites to a list of objectIds    
+                List<string> list = [];
+                foreach (var community in user.JoinedCommunities)
+                {
+                    list.Add(community.CommunityId);
+                }
+
+                //matching ids in the list with communites
+                var communities = db.GetCollection<Community>("communities")
+                .AsQueryable()
+                .Where(i => list.Contains(i._id))
+                .ToList();
+
                 return Ok(communities);
             }
             catch (Exception e)
@@ -31,18 +50,15 @@ namespace sheridan_connect_backend.controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult GetAllCommunities()
+        [HttpGet("{searchQuery}")]
+        public IActionResult GetCommunities(string searchQuery)
         {
             try
             {
-                var communities = db.GetAllCommunities().AsQueryable();
+                var filter = Builders<Community>.Filter.Eq("name", new Regex(searchQuery, RegexOptions.IgnoreCase));
+                var communities = db.GetCollection<Community>("communities").Find(filter).ToList();
+                //var communities = db.GetCollection<Community>("communities").AsQueryable();
 
-                // foreach (var community in communities)
-                // {
-                //     community.idString = community._id.ToString();
-                //     Console.WriteLine(community._id.ToString());
-                // }
                 return Ok(communities);
             }
             catch (Exception e)
@@ -63,7 +79,6 @@ namespace sheridan_connect_backend.controllers
                     return Ok("Community Added!");
 
                 return BadRequest("Error Occured while trying to add community!");
-
 
             }
             catch (Exception e)

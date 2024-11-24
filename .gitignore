@@ -7,7 +7,7 @@
 .env
 
 # User-specific files
-*.rsuser
+*.rsuserdotnet 
 *.suo
 *.user
 *.userosscache

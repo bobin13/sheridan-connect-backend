@@ -482,3 +482,5 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll

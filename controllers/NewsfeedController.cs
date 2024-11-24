@@ -1,56 +1,8 @@
-// using System;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Threading.Tasks;
-// using Microsoft.AspNetCore.Mvc;
-// using MongoDB.Driver;
-// using sheridan_connect_backend.DB;
-// using sheridan_connect_backend.Models;
-
-// namespace sheridan_connect_backend.controllers
-// {
-//     [ApiController]
-//     [Route("api/v1/[controller]")]
-//     public class NewsfeedController : ControllerBase
-//     {
-//         MongoDbContext db = new MongoDbContext();
-
-//         [HttpGet]
-//         public IActionResult Newsfeed()
-//         {
-//             try
-//             {
-//                 var posts = db.GetAllPost().AsQueryable();
-//                 return Ok(posts);
-//             }
-//             catch (Exception e)
-//             {
-//                 return BadRequest(e.Message);
-//             }
-//         }
-
-//         public async Task<bool> AddPost(Post newPost)
-//         {
-//             try
-//             {
-//                 var client = GetMongoClient();
-//                 var db = client.GetDatabase(this.dbName);
-//                 await db.GetCollection<Post>("posts").InsertOneAsync(newPost);
-//                 return true;
-//             }
-//             catch (Exception e)
-//             {
-//                 Console.WriteLine(e.Message);
-//                 return false;
-//             }
-//         }
-//     }
-// }
-
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using MongoDB.Bson;
 using sheridan_connect_backend.DB;
 using sheridan_connect_backend.Models;
 
@@ -82,26 +34,61 @@ namespace sheridan_connect_backend.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult AddPost([FromBody] Post post)
+        // [HttpPost]
+        // public IActionResult AddPost([FromBody] Post post)
+        // {
+        //     try
+        //     {
+        //         if (post == null)
+        //         {
+        //             return BadRequest("Invalid post data.");
+        //         }
+
+        //         post.TimePosted = DateTime.UtcNow; // Add current time to the post
+        //         var collection = dbContext.GetAllPost();
+        //         collection.InsertOne(post); // Insert the new post into MongoDB
+
+        //         return Ok("Post added successfully!");
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         return BadRequest(e.Message);
+        //     }
+        // }
+
+ [HttpPost]
+public IActionResult AddPost([FromBody] Post post)
+{
+    try
+    {
+        if (post == null)
         {
-            try
-            {
-                if (post == null)
-                {
-                    return BadRequest("Invalid post data.");
-                }
-
-                post.TimePosted = DateTime.UtcNow; // Add current time to the post
-                var collection = dbContext.GetAllPost();
-                collection.InsertOne(post); // Insert the new post into MongoDB
-
-                return Ok("Post added successfully!");
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return BadRequest("Invalid post data.");
         }
+
+        // Generate a new ObjectId if _id is empty
+        if (string.IsNullOrEmpty(post._id))
+        {
+            post._id = ObjectId.GenerateNewId().ToString();
+        }
+
+        post.TimePosted = DateTime.UtcNow;
+        
+        // Initialize lists if they're null
+        post.Comments ??= new List<string>();
+        post.Likes ??= new List<string>();
+
+        var collection = dbContext.GetAllPost();
+        collection.InsertOne(post);
+
+        return Ok(new { message = "Post added successfully!", postId = post._id });
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Error in AddPost: " + e.ToString());
+        return StatusCode(500, new { message = "Internal server error", error = e.Message });
+    }
+}
+
     }
 }

@@ -20,6 +20,10 @@ builder.Services.AddControllers();
 
 // Configure JWT authentication
 var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<AppSettings>();
+if (string.IsNullOrEmpty(jwtSettings.JwtSecret))
+{
+    throw new Exception("JWT Secret is not configured!");
+}
 var key = Encoding.ASCII.GetBytes(jwtSettings.JwtSecret);
 
 builder.Services.AddAuthentication(options =>
